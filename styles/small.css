@@ -1,0 +1,466 @@
+/* ===================================
+   MOBILE-FIRST BASE STYLES
+   WDD 231 - Course Home Page
+   FIXED CONTRAST & LAYOUT
+   =================================== */
+
+/* CSS Variables - Softer Green with Good Contrast */
+:root {
+    /* Main Colors - Dark Navigation */
+    --primary-color: #0f172a;      /* Very Dark Blue-Gray */
+    --secondary-color: #1e293b;    /* Dark Blue-Gray */
+    --accent-color: #3b82f6;       /* Bright Blue */
+    --accent-hover: #2563eb;       /* Darker Blue */
+    
+    /* Text Colors */
+    --text-light: #ffffff;         /* Pure White */
+    --text-dark: #1a202c;          /* Very Dark Gray */
+    --text-muted: #475569;         /* Darker Muted Gray for better contrast */
+    
+    /* Background Colors */
+    --bg-light: #f8fafc;           /* Light Gray Background */
+    --bg-card: #ffffff;            /* Pure White Cards */
+    --border-color: #e2e8f0;       /* Light Border */
+    
+    /* Success/Completed Colors - Softer Green with Good Contrast */
+    --success-color: #047857;      /* Darker Emerald Green (better contrast) */
+    --success-bg: #d1fae5;         /* Very light green background */
+    --success-text: #065f46;       /* Dark green text (WCAG AAA) */
+    --success-hover: #065f46;      /* Even darker on hover */
+    
+    /* Course Colors - Not Completed */
+    --course-bg: #f1f5f9;          /* Light gray background */
+    --course-text: #1e293b;        /* Very dark text for contrast */
+    --course-border: #cbd5e1;      /* Medium border */
+    
+    /* Effects */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles - Logo and Name Together on Left */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Container - Logo + Name Together */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.site-logo {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.site-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+/* Hamburger Button */
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+    flex-shrink: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-light);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+    background-color: var(--accent-color);
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Close Button */
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+/* Navigation - Mobile */
+nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    padding-top: 4rem;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+nav.show {
+    display: flex;
+}
+
+nav.show ~ .close-btn {
+    display: block;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: block;
+    font-weight: 400;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    padding-left: 2rem;
+}
+
+nav a.active {
+    background-color: var(--accent-hover);
+    font-weight: 600;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 1.5rem 1.25rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+main h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.card h2 {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    margin: -1.5rem -1.5rem 1.25rem -1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* About Section */
+.about-section p {
+    text-align: left;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* Student Photo Section */
+.photo-section {
+    text-align: center;
+}
+
+.student-photo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid var(--border-color);
+}
+
+/* Courses Section */
+.courses-section {
+    padding-bottom: 2rem;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.75rem;
+    border: 2px solid var(--primary-color);
+    background-color: var(--bg-card);
+    color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 80px;
+    max-width: 120px;
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+}
+
+/* Courses Container */
+#courses-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Course Item Card - NOT COMPLETED (High Contrast) */
+.course-item {
+    background-color: var(--course-bg);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 2px solid var(--course-border);
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.course-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.2);
+    background-color: var(--bg-card);
+}
+
+/* Course Code (CSE 110) - High Contrast */
+.course-code {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Course Title - High Contrast */
+.course-title {
+    font-size: 0.95rem;
+    color: var(--course-text);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* Course Credits - High Contrast */
+.course-credits {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Completed Courses - Soft Green Background with Dark Text (WCAG AAA) */
+.course-item.completed {
+    background-color: var(--success-bg);
+    border-color: var(--success-color);
+    border-width: 3px;
+}
+
+.course-item.completed .course-code {
+    color: var(--success-text);
+    font-weight: 700;
+}
+
+.course-item.completed .course-title {
+    color: var(--success-text);
+    font-weight: 500;
+}
+
+.course-item.completed .course-credits {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.course-item.completed:hover {
+    background-color: #a7f3d0;
+    border-color: var(--success-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(4, 120, 87, 0.25);
+}
+
+/* Credits Info */
+.credits-info {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    padding: 1rem 1.5rem;
+    background-color: var(--course-bg);
+    border-radius: 8px;
+    border: 2px solid var(--course-border);
+    font-weight: 500;
+}
+
+.credits-info strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+#total-credits {
+    font-weight: bold;
+    color: var(--success-color);
+    font-size: 1.3rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 1.25rem;
+    margin-top: auto;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.social-links svg {
+    width: 36px;
+    height: 36px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.footer-info {
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#lastModified {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 0.75rem;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Ensure no horizontal scroll */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}

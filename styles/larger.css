@@ -1,0 +1,322 @@
+/* ===================================
+   TABLET AND DESKTOP STYLES
+   Media Query: 640px and up
+   =================================== */
+
+@media screen and (min-width: 640px) {
+    
+    /* Header adjustments */
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .logo-container {
+        gap: 1rem;
+    }
+
+    .site-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .site-name {
+        font-size: 1.4rem;
+    }
+
+    /* Main content padding */
+    main {
+        padding: 2rem;
+    }
+
+    main h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Cards with more padding */
+    .card {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .card h2 {
+        margin: -2rem -2rem 1.5rem -2rem;
+        padding: 1.25rem 2rem;
+        font-size: 1.3rem;
+    }
+
+    /* Filter buttons - better spacing */
+    .filter-btn {
+        padding: 0.75rem 2rem;
+        flex: 0 1 auto;
+        max-width: 150px;
+    }
+
+    /* Courses in grid for tablet (2 columns) */
+    #courses-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .course-item {
+        transform: translateX(0); /* Reset mobile animation */
+        padding: 1.5rem;
+    }
+
+    .course-item:hover {
+        transform: translateY(-3px);
+    }
+
+    /* Course card text sizing for tablet */
+    .course-code {
+        font-size: 1.15rem;
+    }
+
+    .course-title {
+        font-size: 0.95rem;
+    }
+}
+
+/* ===================================
+   DESKTOP LAYOUT - 768px and up
+   =================================== */
+
+@media screen and (min-width: 768px) {
+    
+    /* Hide mobile navigation elements */
+    .hamburger {
+        display: none !important;
+    }
+
+    .close-btn {
+        display: none !important;
+    }
+
+    /* Desktop Navigation - Horizontal Flex (Dark Bar) */
+    nav {
+        display: flex !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        background-color: var(--primary-color);
+        padding: 0 !important;
+        flex-direction: row !important;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        overflow-y: visible !important;
+    }
+
+    nav a {
+        padding: 1rem 2rem;
+        border-bottom: none !important;
+        border-left: none !important;
+        flex: 0 1 auto;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-light);
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    nav a:last-child {
+        border-right: none;
+    }
+
+    nav a:hover {
+        background-color: var(--secondary-color);
+        padding-left: 2rem; /* Keep consistent padding */
+        transform: none;
+    }
+
+    nav a.active {
+        background-color: var(--accent-hover);
+        border-bottom: 4px solid var(--accent-color);
+        border-left: none !important;
+        font-weight: 700;
+    }
+
+    /* Two-column layout for About Me and Student Photo */
+    .about-section {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(65% - 1rem);
+        margin-right: 2%;
+    }
+
+    .photo-section {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(33% - 1rem);
+        margin-right: 0;
+    }
+
+    /* Better photo sizing */
+    .student-photo {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Courses section full width */
+    .courses-section {
+        width: 100%;
+        clear: both;
+        display: block;
+    }
+
+    /* Courses in 3-column grid */
+    #courses-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    /* Larger course cards */
+    .course-item {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .course-code {
+        font-size: 1.2rem;
+    }
+
+    .course-title {
+        font-size: 1rem;
+    }
+
+    .course-credits {
+        font-size: 0.9rem;
+    }
+
+    /* Footer improvements */
+    footer {
+        padding: 2.5rem 2rem;
+    }
+
+    .social-links {
+        gap: 2.5rem;
+    }
+
+    .social-links svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ===================================
+   LARGE DESKTOP - 1024px and up
+   =================================== */
+
+@media screen and (min-width: 1024px) {
+    
+    /* Wider navigation items */
+    nav a {
+        padding: 1.1rem 2.5rem;
+    }
+
+    nav a:hover {
+        padding-left: 2.5rem;
+    }
+
+    /* Adjust two-column proportions */
+    .about-section {
+        width: calc(67% - 1.5rem);
+        margin-right: 3%;
+    }
+
+    .photo-section {
+        width: calc(30% - 1.5rem);
+    }
+
+    /* Four-column grid for courses */
+    #courses-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+    }
+
+    /* More generous main padding */
+    main {
+        padding: 2.5rem 3rem;
+        max-width: 1400px;
+    }
+}
+
+/* ===================================
+   EXTRA LARGE SCREENS - 1200px and up
+   =================================== */
+
+@media screen and (min-width: 1200px) {
+    
+    /* Even better proportions */
+    .about-section {
+        width: calc(68% - 2rem);
+    }
+
+    .photo-section {
+        width: calc(30% - 1rem);
+    }
+
+    /* Larger cards */
+    .card {
+        padding: 2.5rem;
+    }
+
+    .card h2 {
+        margin: -2.5rem -2.5rem 2rem -2.5rem;
+        padding: 1.5rem 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    /* Five-column grid for many courses */
+    #courses-container {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Enhanced hover effects */
+    .course-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .filter-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
+@media print {
+    header,
+    nav,
+    footer,
+    .filter-buttons {
+        display: none;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    main {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .about-section,
+    .photo-section {
+        width: 100%;
+        display: block;
+        margin-right: 0;
+    }
+}
