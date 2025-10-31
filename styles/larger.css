@@ -1,10 +1,10 @@
 /* ===================================
-   TABLET AND DESKTOP STYLES
-   Media Query: 640px and up
+    TABLET AND DESKTOP STYLES
+    Media Query: 640px and up
    =================================== */
 
 @media screen and (min-width: 640px) {
-    
+
     /* Header adjustments */
     header {
         padding: 1rem 2rem;
@@ -60,7 +60,8 @@
     }
 
     .course-item {
-        transform: translateX(0); /* Reset mobile animation */
+        transform: translateX(0);
+        /* Reset mobile animation */
         padding: 1.5rem;
     }
 
@@ -79,11 +80,11 @@
 }
 
 /* ===================================
-   DESKTOP LAYOUT - 768px and up
+    DESKTOP LAYOUT - 768px and up
    =================================== */
 
 @media screen and (min-width: 768px) {
-    
+
     /* Hide mobile navigation elements */
     .hamburger {
         display: none !important;
@@ -127,7 +128,8 @@
 
     nav a:hover {
         background-color: var(--secondary-color);
-        padding-left: 2rem; /* Keep consistent padding */
+        padding-left: 2rem;
+        /* Keep consistent padding */
         transform: none;
     }
 
@@ -205,11 +207,11 @@
 }
 
 /* ===================================
-   LARGE DESKTOP - 1024px and up
+    LARGE DESKTOP - 1024px and up
    =================================== */
 
 @media screen and (min-width: 1024px) {
-    
+
     /* Wider navigation items */
     nav a {
         padding: 1.1rem 2.5rem;
@@ -243,11 +245,11 @@
 }
 
 /* ===================================
-   EXTRA LARGE SCREENS - 1200px and up
+    EXTRA LARGE SCREENS - 1200px and up
    =================================== */
 
 @media screen and (min-width: 1200px) {
-    
+
     /* Even better proportions */
     .about-section {
         width: calc(68% - 2rem);
@@ -287,10 +289,11 @@
 }
 
 /* ===================================
-   PRINT STYLES
+    PRINT STYLES
    =================================== */
 
 @media print {
+
     header,
     nav,
     footer,

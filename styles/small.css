@@ -1,38 +1,38 @@
 /* ===================================
-   MOBILE-FIRST BASE STYLES
-   WDD 231 - Course Home Page
-   FIXED CONTRAST & LAYOUT
+    MOBILE-FIRST BASE STYLES
+    WDD 231 - Course Home Page
+    FIXED CONTRAST & LAYOUT
    =================================== */
 
 /* CSS Variables - Softer Green with Good Contrast */
 :root {
-    /* Main Colors - Dark Navigation */
-    --primary-color: #0f172a;      /* Very Dark Blue-Gray */
-    --secondary-color: #1e293b;    /* Dark Blue-Gray */
-    --accent-color: #3b82f6;       /* Bright Blue */
-    --accent-hover: #2563eb;       /* Darker Blue */
-    
+    /* Main Colors */
+    --primary-color: #0f172a;
+    --secondary-color: #1e293b;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+
     /* Text Colors */
-    --text-light: #ffffff;         /* Pure White */
-    --text-dark: #1a202c;          /* Very Dark Gray */
-    --text-muted: #475569;         /* Darker Muted Gray for better contrast */
-    
+    --text-light: #ffffff;
+    --text-dark: #1a202c;
+    --text-muted: #475569;
+
     /* Background Colors */
-    --bg-light: #f8fafc;           /* Light Gray Background */
-    --bg-card: #ffffff;            /* Pure White Cards */
-    --border-color: #e2e8f0;       /* Light Border */
-    
-    /* Success/Completed Colors - Softer Green with Good Contrast */
-    --success-color: #047857;      /* Darker Emerald Green (better contrast) */
-    --success-bg: #d1fae5;         /* Very light green background */
-    --success-text: #065f46;       /* Dark green text (WCAG AAA) */
-    --success-hover: #065f46;      /* Even darker on hover */
-    
+    --bg-light: #f8fafc;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+
+    /* Success/Completed Colors */
+    --success-color: #047857;
+    --success-bg: #d1fae5;
+    --success-text: #065f46;
+    --success-hover: #065f46;
+
     /* Course Colors - Not Completed */
-    --course-bg: #f1f5f9;          /* Light gray background */
-    --course-text: #1e293b;        /* Very dark text for contrast */
-    --course-border: #cbd5e1;      /* Medium border */
-    
+    --course-bg: #f1f5f9;
+    --course-text: #1e293b;
+    --course-border: #cbd5e1;
+
     /* Effects */
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
     --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
