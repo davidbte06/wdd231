@@ -1,0 +1,233 @@
+/* --- Root Variables --- */
+:root {
+    --primary-color: #005A9C;
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --background-color: #FFFFFF;
+    --header-footer-bg: #222;
+    --header-footer-text: #EAEAEA;
+
+    --font-primary: 'Roboto', sans-serif;
+}
+
+/* --- Global Styles --- */
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Header and Nav --- */
+header {
+    background-color: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-container img {
+    max-width: 75px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.logo-container h1 {
+    font-size: 1.5rem;
+}
+
+nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+nav.open {
+    display: flex;
+}
+
+nav a {
+    color: var(--header-footer-text);
+    text-decoration: none;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#menu-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--header-footer-text);
+    cursor: pointer;
+    display: block;
+}
+
+/* --- Main Content --- */
+main {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.view-toggle {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.view-toggle button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.view-toggle button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#member-cards-container.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+#member-cards-container.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.member-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.member-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.member-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.member-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.member-card a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-dev-info {
+    font-size: 0.9rem;
+    border-top: 1px solid var(--header-footer-text);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+
+#last-modified {
+    color: #FFC107;
+}
+
+/* --- Responsive Styles --- */
+@media (min-width: 768px) {
+    #menu-button {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        margin-top: 0;
+        gap: 1rem;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footer-dev-info {
+        border-top: none;
+        margin-top: 0;
+        text-align: right;
+    }
+}
+

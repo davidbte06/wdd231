@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Timbuktu Traders",
+        "address": "123 Market Street, Timbuktu, Mali",
+        "phone": "(223) 555-1234",
+        "website": "https://www.timbuktraders.com",
+        "image": "images/logoipsum-300.svg",
+        "membershipLevel": 3,
+        "description": "Importers and exporters of local crafts and textiles."
+    },
+    {
+        "name": "Mali Digital Solutions",
+        "address": "456 Tech Avenue, Timbuktu, Mali",
+        "phone": "(223) 555-5678",
+        "website": "https://www.malidigital.com",
+        "image": "images/logoipsum-300.svg",
+        "membershipLevel": 2,
+        "description": "IT services and web development for local businesses."
+    },
+    {
+        "name": "Sahara Sands Cafe",
+        "address": "789 Oasis Plaza, Timbuktu, Mali",
+        "phone": "(223) 555-9012",
+        "website": "https://www.saharasands.com",
+        "image": "images/logoipsum-300.svg",
+        "membershipLevel": 1,
+        "description": "Local cafe serving traditional mint tea and snacks."
+    },
+    {
+        "name": "River Niger Logistics",
+        "address": "101 Port Road, Timbuktu, Mali",
+        "phone": "(223) 555-3456",
+        "website": "https://www.nigerlogistics.com",
+        "image": "images/logoipsum-300.svg",
+        "membershipLevel": 2,
+        "description": "Transport and logistics services along the Niger River."
+    },
+    {
+        "name": "Timbuktu Heritage Tours",
+        "address": "202 Ancient Scroll Way, Timbuktu, Mali",
+        "phone": "(223) 555-7890",
+        "website": "https://www.timbuktuheritagetours.com",
+        "image": "images/logoipsum-300.svg",
+        "membershipLevel": 3,
+        "description": "Guided tours of Timbuktu's historic sites and libraries."
+    },
+    {
+        "name": "Desert Jewel B&B",
+        "address": "303 Dune Crest, Timbuktu, Mali",
+        "phone": "(223) 555-4321",
+        "website": "https://www.desertjewelbnb.com",
+        "image": "images/logoipsum-300.svg",
+        "membershipLevel": 1,
+        "description": "Cozy bed and breakfast with desert views."
+    },
+    {
+        "name": "Artisans of Mali",
+        "address": "404 Craft Market, Timbuktu, Mali",
+        "phone": "(223) 555-8765",
+        "website": "https://www.artisansofmali.com",
+        "image": "images/logoipsum-300.svg",
+        "membershipLevel": 2,
+        "description": "Local artisan cooperative for leather goods and jewelry."
+    }
+]
