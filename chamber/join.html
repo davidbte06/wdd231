@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join the Chamber | Timbuktu Chamber of Commerce</title>
+    <meta name="description"
+        content="Join the Timbuktu Chamber of Commerce and become part of our growing business community.">
+
+    <meta name="author" content="David Burguete">
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Join the Timbuktu Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Join the Timbuktu Chamber of Commerce and become part of our growing business community.">
+    <meta property="og:image" content="https://davidbte06.github.io/wdd231/chamber/images/social-card.png">
+    <meta property="og:url" content="https://davidbte06.github.io/wdd231/chamber/join.html">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- JavaScript Files -->
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logoipsum-300.svg" alt="Timbuktu Chamber of Commerce Logo" width="100" height="100">
+            <h1>Timbuktu Chamber of Commerce</h1>
+        </div>
+        <button id="menu-button">☰</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="discover.html">Discover</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html" class="active">Join</a>
+        </nav>
+    </header>
+
+    <main class="join-main">
+
+        <section class="form-container">
+            <h2>Join Our Chamber</h2>
+            <p>Please fill out the form to apply for membership.</p>
+
+            <form method="get" action="thankyou.html">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+                    <label>First Name* <input type="text" id="fname" name="fname" required autocomplete="given-name"
+                            title="Your first name"></label>
+                    <label>Last Name* <input type="text" id="lname" name="lname" required autocomplete="family-name"
+                            title="Your last name"></label>
+                    <label>Title <input type="text" id="title" name="title" autocomplete="organization-title"
+                            pattern="[a-zA-Z\s\-]{7,}"
+                            title="Min 7 chars, letters, spaces, hyphens (e.g., 'Marketing Manager')"></label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label>Email* <input type="email" id="email" name="email" required autocomplete="email"
+                            placeholder="example@company.com" title="Your email address"></label>
+                    <label>Mobile Phone* <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                            title="Your mobile phone number"></label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Organization Information</legend>
+                    <label>Business/Organization Name* <input type="text" id="bizname" name="bizname" required
+                            autocomplete="organization" title="Your organization's name"></label>
+                    <label>Organization Description <textarea id="description" name="description"
+                            title="A brief description of your organization"></textarea></label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Membership Level*</legend>
+                    <label><input type="radio" name="level" value="np" required> NP Membership (Non-Profit, No
+                        Fee)</label>
+                    <label><input type="radio" name="level" value="bronze"> Bronze Membership</label>
+                    <label><input type="radio" name="level" value="silver"> Silver Membership</label>
+                    <label><input type="radio" name="level" value="gold"> Gold Membership</label>
+                </fieldset>
+
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <input type="submit" value="Join the Chamber" class="cta-button">
+            </form>
+        </section>
+
+        <aside class="membership-cards">
+            <h3>Membership Benefits</h3>
+            <div class="card" id="card-np">
+                <h4>NP Membership</h4>
+                <p>For non-profit organizations.</p>
+                <a href="#" id="open-np-modal">Learn More</a>
+            </div>
+            <div class="card" id="card-bronze">
+                <h4>Bronze Membership</h4>
+                <p>Ideal for small businesses.</p>
+                <a href="#" id="open-bronze-modal">Learn More</a>
+            </div>
+            <div class="card" id="card-silver">
+                <h4>Silver Membership</h4>
+                <p>Includes event discounts.</p>
+                <a href="#" id="open-silver-modal">Learn More</a>
+            </div>
+            <div class="card" id="card-gold">
+                <h4>Gold Membership</h4>
+                <p>All benefits, including spotlights.</p>
+                <a href="#" id="open-gold-modal">Learn More</a>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+    </footer>
+
+    <dialog id="np-modal">
+        <h2>NP Membership Benefits</h2>
+        <ul>
+            <li>Listing in the directory</li>
+            <li>Access to community newsletter</li>
+        </ul>
+        <button id="close-np-modal">Close</button>
+    </dialog>
+    <dialog id="bronze-modal">
+        <h2>Bronze Membership Benefits</h2>
+        <ul>
+            <li>All NP benefits</li>
+            <li>Training workshop access</li>
+        </ul>
+        <button id="close-bronze-modal">Close</button>
+    </dialog>
+    <dialog id="silver-modal">
+        <h2>Silver Membership Benefits</h2>
+        <ul>
+            <li>All Bronze benefits</li>
+            <li>10% discount on event tickets</li>
+            <li>Eligible for homepage spotlights</li>
+        </ul>
+        <button id="close-silver-modal">Close</button>
+    </dialog>
+    <dialog id="gold-modal">
+        <h2>Gold Membership Benefits</h2>
+        <ul>
+            <li>All Silver benefits</li>
+            <li>Guaranteed homepage spotlight</li>
+            <li>Free entry to annual gala</li>
+        </ul>
+        <button id="close-gold-modal">Close</button>
+    </dialog>
+
+</body>
+
+</html>

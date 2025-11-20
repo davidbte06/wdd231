@@ -235,3 +235,50 @@ document.addEventListener("DOMContentLoaded", () => {
     getSpotlights();
 
 });
+
+// scripts/main.js
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // ===========================================
+    // --- NEW JOIN PAGE LOGIC ---
+    // ===========================================
+
+    // Set the hidden timestamp field
+    const timestampField = document.getElementById("timestamp");
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
+
+    /**
+     * Helper function to set up a modal
+     * @param {string} openBtnId - The ID of the <a> link to open the modal
+     * @param {string} closeBtnId - The ID of the <button> to close the modal
+     * @param {string} modalId - The ID of the <dialog> element
+     */
+    function setupModal(openBtnId, closeBtnId, modalId) {
+        const openBtn = document.getElementById(openBtnId);
+        const closeBtn = document.getElementById(closeBtnId);
+        const modal = document.getElementById(modalId);
+
+        if (openBtn && closeBtn && modal) {
+            // Open modal on link click
+            openBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                modal.showModal();
+            });
+
+            // Close modal on button click
+            closeBtn.addEventListener("click", () => {
+                modal.close();
+            });
+        }
+    }
+
+    // Initialize all four modals
+    setupModal("open-np-modal", "close-np-modal", "np-modal");
+    setupModal("open-bronze-modal", "close-bronze-modal", "bronze-modal");
+    setupModal("open-silver-modal", "close-silver-modal", "silver-modal");
+    setupModal("open-gold-modal", "close-gold-modal", "gold-modal");
+
+});
