@@ -1,0 +1,92 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+:root {
+    /* Define the color palette variables */
+    --primary-color: #0B0D17;   /* Deep Dark Blue */
+    --secondary-color: #D0D6F9; /* Pale Blue text */
+    --accent-color: #FFFFFF;    /* White Headers */
+    --action-color: #383B4B;    /* Card Backgrounds */
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Exo 2', sans-serif; /* Body Font */
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto; /* Center the document */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Orbitron', sans-serif; /* Heading Font */
+    color: var(--accent-color);
+    margin-top: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 { text-align: center; border-bottom: 2px solid var(--action-color); padding-bottom: 10px; }
+h2 { border-bottom: 1px solid var(--action-color); padding-bottom: 5px; }
+
+/* Palette Display Table */
+.colors {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: black; /* Text inside the color boxes should be black to be visible */
+    font-weight: bold;
+}
+.colors td {
+    height: 80px;
+    text-align: center;
+    border: 1px solid white;
+}
+.primary { background-color: var(--primary-color); color: white !important; }
+.secondary { background-color: var(--secondary-color); }
+.accent { background-color: var(--accent-color); }
+.action { background-color: var(--action-color); color: white !important; }
+
+/* Typography Examples */
+.heading-font {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    border: 1px solid var(--action-color);
+    padding: 10px;
+}
+.body-font {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1em;
+    border: 1px solid var(--action-color);
+    padding: 10px;
+}
+
+/* Wireframe Images */
+img {
+    display: block;
+    max-width: 100%;
+    border: 2px solid var(--action-color);
+    margin-top: 10px;
+}
+
+.logo-box {
+    background-color: var(--action-color);
+    padding: 20px;
+    display: inline-block;
+    border: 1px solid var(--accent-color);
+}
+.logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+}
