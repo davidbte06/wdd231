@@ -3,10 +3,10 @@
 
 :root {
     /* Define the color palette variables */
-    --primary-color: #0B0D17;   /* Deep Dark Blue */
-    --secondary-color: #D0D6F9; /* Pale Blue text */
-    --accent-color: #FFFFFF;    /* White Headers */
-    --action-color: #383B4B;    /* Card Backgrounds */
+    --primary-color: #0B0D17;
+    --secondary-color: #D0D6F9;
+    --accent-color: #FFFFFF;
+    --action-color: #383B4B;
 }
 
 html {
@@ -19,17 +19,17 @@ html {
 body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    font-family: 'Exo 2', sans-serif; /* Body Font */
+    font-family: 'Exo 2', sans-serif;
     font-size: 18px;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
     max-width: 960px;
-    margin: 0 auto; /* Center the document */
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Orbitron', sans-serif; /* Heading Font */
+    font-family: 'Orbitron', sans-serif;
     color: var(--accent-color);
     margin-top: 1.5em;
     text-transform: uppercase;
@@ -44,7 +44,7 @@ h2 { border-bottom: 1px solid var(--action-color); padding-bottom: 5px; }
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    color: black; /* Text inside the color boxes should be black to be visible */
+    color: black;
     font-weight: bold;
 }
 .colors td {
