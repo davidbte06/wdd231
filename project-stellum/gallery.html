@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellum | Gallery</title>
+
+    <meta name="description" content="Browse our curated collection of deep space imagery from NASA.">
+    <meta name="author" content="David Burguete">
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/gallery.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Stellum Official Logo" class="logo">
+            </a>
+
+            <button id="menu-btn" aria-label="Open Menu">☰</button>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="site-plan.html">Site Plan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-header">
+            <h1>Deep Space Archive</h1>
+            <p>Generated dynamically from NASA's APOD API.</p>
+        </section>
+
+        <section id="gallery-grid" class="gallery-grid">
+            <div class="loading-message">Connecting to NASA...</div>
+        </section>
+
+        <dialog id="image-modal">
+            <div class="modal-wrapper">
+                <button id="close-modal" aria-label="Close modal">X</button>
+                <div class="modal-content">
+                    <img id="modal-img" src="" alt="Space detail">
+                    <div class="modal-text">
+                        <h3 id="modal-title">Title goes here</h3>
+                        <p id="modal-date">Date</p>
+                        <p id="modal-desc">Description goes here...</p>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Stellum Project | <span id="lastModified"></span></p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellum | Message Received</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main style="text-align: center; padding: 4rem 1rem;">
+        <h1>Transmission Received</h1>
+        <p>Thank you for contacting Stellum.</p>
+
+        <div class="confirmation-box"
+            style="margin-top: 2rem; border: 1px solid white; padding: 2rem; display: inline-block;">
+            <p>Welcome to the crew, <strong id="user-name"></strong>!</p>
+            <p>We have sent a confirmation to: <strong id="user-email"></strong></p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="index.html" class="cta-button">Return to Base</a>
+        </div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('fname');
+        const email = urlParams.get('email');
+
+        if (name) {
+            document.getElementById('user-name').textContent = name;
+        }
+        if (email) {
+            document.getElementById('user-email').textContent = email;
+        }
+    </script>
+
+</body>
+
+</html>

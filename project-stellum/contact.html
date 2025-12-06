@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellum | Contact</title>
+
+    <meta name="description" content="Contact the Stellum team. Suggest new space topics or join our newsletter.">
+    <meta name="author" content="David Burguete">
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+
+    <script type="module" src="scripts/main.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Stellum Official Logo" class="logo">
+            </a>
+
+            <button id="menu-btn" aria-label="Open Menu">☰</button>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="site-plan.html">Site Plan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h1>Join the Mission</h1>
+            <p>Have a favorite galaxy? Suggest a topic for our next gallery update.</p>
+
+            <form action="success.html" method="get">
+
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" required placeholder="Neil">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="neil@nasa.gov">
+                </div>
+
+                <div class="form-group">
+                    <label for="topic">Favorite Space Topic</label>
+                    <select id="topic" name="topic">
+                        <option value="Stars">Stars</option>
+                        <option value="Planets">Planets</option>
+                        <option value="Black Holes">Black Holes</option>
+                        <option value="Nebulas">Nebulas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5"
+                        placeholder="Tell us what you want to see..."></textarea>
+                </div>
+
+                <button type="submit" class="cta-button">Launch Message</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Stellum Project | <span id="lastModified"></span></p>
+    </footer>
+
+</body>
+
+</html>

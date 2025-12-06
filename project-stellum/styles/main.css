@@ -1,0 +1,424 @@
+:root {
+    /* Site Plan Colors */
+    --primary-color: #0B0D17;
+    --secondary-color: #D0D6F9;
+    --accent-color: #FFFFFF;
+    --action-color: #383B4B;
+
+    /* Fonts */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Exo 2', sans-serif;
+}
+
+/* Base Settings */
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    /* Important: Removes default browser white space */
+}
+
+h1,
+h2,
+h3,
+nav a {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+}
+
+/* ================= HEADER & NAV ================= */
+header {
+    background-color: rgba(11, 13, 23, 0.95);
+    border-bottom: 1px solid var(--action-color);
+    padding: 0.5rem 2rem;
+    /* Added side padding so logo isn't touching edge */
+    position: sticky;
+    /* Keeps the menu visible when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    /* Pushes Logo Left, Menu Right */
+    align-items: center;
+    width: 100%;
+    /* Ensures it uses full width */
+    /* Note: I removed max-width: 1200px so the logo stays on the far left */
+}
+
+/* LOGO */
+.logo-link {
+    display: block;
+    text-decoration: none;
+}
+
+.logo {
+    width: 200px;
+    /* Your cropped size */
+    height: auto;
+    display: block;
+}
+
+/* MOBILE MENU BUTTON */
+#menu-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    display: block;
+    /* Visible on Mobile */
+}
+
+/* NAVIGATION (Mobile Default) */
+nav ul {
+    list-style: none;
+    display: none;
+    /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    /* pushes it exactly below the header */
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--action-color);
+}
+
+/* JavaScript adds this class to show the menu */
+nav ul.open {
+    display: flex;
+}
+
+nav a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--action-color);
+}
+
+nav a:hover {
+    background-color: var(--action-color);
+}
+
+nav a.active {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* ================= DESKTOP VIEW ================= */
+@media (min-width: 768px) {
+    #menu-btn {
+        display: none;
+        /* Hide Hamburger */
+    }
+
+    nav ul {
+        display: flex;
+        /* FORCE menu to be visible */
+        position: static;
+        /* Remove absolute positioning */
+        flex-direction: row;
+        /* Horizontal list */
+        background: none;
+        width: auto;
+        border: none;
+        gap: 30px;
+        /* Space between links */
+    }
+
+    nav a {
+        border: none;
+        padding: 0;
+        /* Optional: Hover effect line */
+        position: relative;
+    }
+
+    nav a:hover {
+        background-color: transparent;
+        color: var(--secondary-color);
+    }
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    /* Asegúrate de tener la imagen 'hero-bg.jpg' en tu carpeta images */
+    background-image: linear-gradient(rgba(11, 13, 23, 0.6), rgba(11, 13, 23, 0.8)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    /* Ocupa el 60% de la altura de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    /* Texto oscuro sobre fondo claro */
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    /* Efecto de crecimiento suave */
+    background-color: white;
+}
+
+/* ================= FEATURES GRID ================= */
+.features {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Móvil: 1 columna */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.feature-card {
+    background-color: rgba(56, 59, 75, 0.5);
+    /* Semi-transparent Action Color */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--action-color);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    /* Se levanta un poco al pasar el mouse */
+    border-color: var(--secondary-color);
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Layout tablet (CSS Grid) */
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ================= GALLERY PAGE ================= */
+.gallery-header {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styles Card  */
+.gallery-card {
+    background-color: var(--action-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-color: var(--secondary-color);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ================= MODAL DIALOG ================= */
+dialog {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-wrapper {
+    position: relative;
+    padding: 0;
+}
+
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-img {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+    background-color: black;
+}
+
+.modal-text {
+    padding: 2rem;
+    border-top: 1px solid var(--action-color);
+}
+
+#modal-title {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+#modal-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+    .modal-content {
+        flex-direction: row;
+    }
+
+    #modal-img {
+        width: 50%;
+        max-height: 600px;
+        object-fit: cover;
+    }
+
+    .modal-text {
+        width: 50%;
+        overflow-y: auto;
+        max-height: 600px;
+    }
+}
+
+/* ================= FORM STYLES ================= */
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(56, 59, 75, 0.3);
+    border: 1px solid var(--action-color);
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    font-family: var(--font-heading);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--action-color);
+    background-color: var(--primary-color);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px rgba(208, 214, 249, 0.5);
+}
+
+/* Fix for the submit button to ensure it stands out */
+button[type="submit"] {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
